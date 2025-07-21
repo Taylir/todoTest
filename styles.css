@@ -38,14 +38,15 @@ body {
 }
 
 .tasksHolder {
-  background-color: gold;
+  background-color: silver;
   height: 100%;
   width: 100%;
   display: flex;
-  gap: 8px;
+  gap: 2px;
 }
 
 .taskSection {
+  position: relative;
   padding: 4px;
   height: 100%;
   width: 100%;
@@ -92,7 +93,27 @@ body {
   background-color: red;
 }
 
+.newInput {
+  color: white;
+  border: none;
+  background-color: transparent;
+  border-left: 1px solid white;
+  border-bottom: 1px solid gray;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.newInput:focus {
+  outline: none;
+  border-left: 3px solid white;
+  border-bottom: 3px solid gray;
+}
+
 .addTask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   font-size: 24px;
   font-weight: bold;
   color: white;
