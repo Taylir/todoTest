@@ -1,4 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  color: white;
+  height: 100vh;
+  width: 100vw;
   background-color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#taskTablet {
+  height: 80%;
+  width: 80%;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid white;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(200, 200, 200, 0.4);
+}
+
+.taskHeader {
+  background-color: silver;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0px 0 100px rgba(0, 0, 0, .5);
+}
+
+.tasksHolder {
+  background-color: gold;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.taskSection {
+  padding: 4px;
+  height: 100%;
+  width: 100%;
+  background-color: #272727;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.taskItem {
+  color: white;
+  border: 2px solid rgba(136, 136, 136, .5);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  position: relative;
+}
+
+.taskItem > label {
+  padding: 8px 16px;
+  flex: 1;
+  cursor: pointer;
+}
+
+#task::checked {
+  background-color: yellow;
+}
+
+.taskItem > p{
+  color: rgba(255, 255, 255, .7);
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px;
+  transition: all 200ms ease-in-out;
+}
+.taskItem > p:hover {
+  color: white;
+  cursor: pointer;
+  background-color: red;
+}
+
+.addTask {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  border: 2px outset silver;
+  border-radius: 4px;
+  text-align: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.addTask:active {
+  border: 2px inset silver;
 }
