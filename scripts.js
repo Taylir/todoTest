@@ -1,6 +1,5 @@
 const task = document.querySelector("#task");
 
-task.addEventListener("change", (e) => {
-  task.classList.toggle("checked")
-  console.log(e.target.checked);
-})
+task.checked && task.classList.add("checked");
+
+task.addEventListener("click", () => task.classList.toggle("checked"));
