@@ -1,16 +1,32 @@
-const task = document.querySelector("#task");
-const addTask = document.querySelector(".addTask");
+const taskInput = document.querySelector("#task-input");
+const addTaskBtn = document.querySelector("#add-task-btn");
+const taskList = document.querySelector("#task-list");
+const emptyImage = document.querySelector(".empty-image")
 
-task.checked && task.classList.add("checked");
-task.addEventListener("click", () => task.classList.toggle("checked"));
+function toggleEmptyState() {
+  emptyImage.style.display = taskList.children.length === 0 ? 'block' : 'none';
+}
 
-addTask.addEventListener("click", () => {
-  const newTask = document.createElement("input");
-  newTask.classList.add("newInput");
-  addTask.parentElement.appendChild(newTask);
-  newTask.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
+function addTask(e) {
+  e.preventDefault();
+  const taskText = taskInput.value.trim();
+  if (!taskText) {
+    return;
+  }
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <input type="checkbox" class="checkbox">
+    <span>${taskText}</span>
+  `;
 
-    }
-  })
+  taskList.appendChild(li);
+  taskInput.value = "";
+  toggleEmptyState();
+}
+
+addTaskBtn.addEventListener("click", addTask);
+taskInput.addEventListener('keypress', (e) => {
+  if (e.key === "Enter") {
+    addTask(e);
+  }
 })
