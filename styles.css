@@ -44,6 +44,55 @@ body {
   font-size: 2rem;
 }
 
+.stat-container {
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+}
+
+.details h3 {
+  color: #fff;
+}
+
+#progressbar {
+  width: 100%;
+  height: 7px;
+  background: rgba(255, 194, 209, 0.3);
+  border-radius: 20px;
+  position: relative;
+  margin-top: 15px;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background: #ff6f91;
+  border-radius: 20px;
+  transition: all 300ms ease;
+}
+
+#numbers {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: #ff6f91;
+  border: 2px solid rgba(255, 194, 209, 0.3);
+  font-weight: bold;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
 .input-area {
   display: flex;
   justify-content: space-between;
@@ -132,7 +181,7 @@ body {
 }
 
 #task-list li .checkbox:checked::before {
-  content: '\2713';
+  content: "\2713";
   color: #fff;
   display: flex;
   justify-content: center;
@@ -144,6 +193,11 @@ body {
   flex: 1;
   margin-left: 10px;
   word-wrap: break-word;
+}
+
+#task-list li.completed span {
+  text-decoration: 2px line-through #000;
+  color: #000;
 }
 
 .task-buttons {
@@ -172,10 +226,34 @@ body {
 }
 
 .task-buttons .edit-btn {
-  background: #ffbf00
+  background: #ffbf00;
 }
 
 .task-buttons .delete-btn {
   background: #ff6f91;
 }
 
+@media (max-width: 600px) {
+  .container {
+    margin: 0 20px;
+    padding: 0 10px;
+  }
+  .todo-app {
+    padding: 1.5rem;
+    gap: 20px;
+  }
+
+  #numbers {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+
+  .input-area input {
+    font-size: 1rem;
+  }
+
+  #task-list li {
+    font-size: 1rem;
+  }
+}
